@@ -10,14 +10,21 @@ const port = process.env.PORT || 3000
 // middleware
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
+// dotenv file
 const uri = process.env.ATLAS_URI
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true })
 
+// establishing connection to MongoDb
 const connection = mongoose.connection
 connection.once('open', () => {
   console.log('Connected to MongoDB')
 })
+
+// routes
+require('./routes/userSignUp')(app)
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
 })
