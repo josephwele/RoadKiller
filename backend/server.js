@@ -1,30 +1,58 @@
 const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose')
+const passport = require('passport')
+const Account = require('../models/account')
+const router = express.Router()
 
-require('dotenv').config()
-
-const app = express()
-const port = process.env.PORT || 3000
-
-// middleware
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-
-// dotenv file
-const uri = process.env.ATLAS_URI
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true })
-
-// establishing connection to MongoDb
-const connection = mongoose.connection
-connection.once('open', () => {
-  console.log('Connected to MongoDB')
+router.get('/', (req, res) => {
+    res.render('index', { user: req.user })
 })
 
-// routes
-require('./routes/userSignUp')(app)
-
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`)
+router.get('/register', (req, res) => {
+    res.render('register', {})
 })
+
+router.post('/register', (req, res, next) => {
+    Account.register(new Account({ username: req.body.username }), req.body.password, (err, account) => {
+        if (err) {
+            return res.render('register', { error: err.message })
+        }
+
+        passport.authenticate('local')(req, res, () => {
+            req.session.save((err) => {
+                if (err) {
+                    return next(err)
+                }
+                res.redirect('/')
+            })
+        })
+    })
+})
+
+router.get('/login', (req, res) => {
+    res.render('login', { user: req.user, error: req.flash('error') })
+})
+
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
+    req.session.save((err) => {
+        if (err) {
+            return next(err)
+        }
+        res.redirect('/')
+    })
+})
+
+router.get('/logout', (req, res, next) => {
+    req.logout()
+    req.session.save((err) => {
+        if (err) {
+            return next(err)
+        }
+        res.redirect('/')
+    })
+})
+
+router.get('/ping', (req, res) => {
+    res.status(200).send('pong!')
+})
+
+module.exports = router
