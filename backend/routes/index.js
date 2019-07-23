@@ -51,7 +51,7 @@ router.get('/logout', (req, res, next) => {
     })
 })
 
-router.get('/ping', (req, res) => {
+router.get('/form', (req, res) => {
     res.status(200).send('pong!')
 })
 
