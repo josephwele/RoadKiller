@@ -4,11 +4,14 @@ import React from 'react';
 export class NavBar extends React.Component {
   render () {
     return (
-          <div className='container-fluid'>
+          <div className='card text-center'>
               <nav className='navbar'>
 
           <div className='bikes'>
             <h1>BIKES</h1>
+            </div>
+
+            <div className='dropdown' style={{position: 'absolute', left:'15px', bottom: '0px', }}>
               <select name='bike'>
               <option value='components'>COMPONENTS</option>
               <option value='accesories'>ACCESORIES</option>
