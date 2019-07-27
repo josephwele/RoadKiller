@@ -21,12 +21,12 @@ export class NavBar extends React.Component {
               <form action='/user/login' method='post'>
 
                   <div style={{ float: 'left', marginRight: '20px' }}>
-                <label for='email'>Email</label>
+                <label for='email'>Email:</label>
                 <input id='email' type='text' value='' name='body[email]' required />
               </div>
 
               <div style={{ float: 'left', marginRight: '20px' }}>
-                      <label for='password'>Password</label>
+                      <label for='password'>Password:</label>
                 <input id='password' type='password' value='' name='body[password]' minlength='5' required />
               </div>
               <div style={{ float: 'left' }}>
