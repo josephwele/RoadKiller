@@ -20,18 +20,16 @@ export class NavBar extends React.Component {
             </select>
 
           </div>
-          <div className='form' >
+          <div className='form-group' >
               <form action='/user/login' method='post'>
 
-                  <div style={{ float: 'left', marginRight: '20px' }}>
+                  <div style={{ float: 'left', marginRight: '20px', paddingBottom:'50px'}}>
                 <label for='email'>Email:</label>
                 <input id='email' type='text' value='' name='body[email]' required />
-              </div>
-
-              <div style={{ float: 'left', marginRight: '20px' }}>
                       <label for='password'>Password:</label>
                 <input id='password' type='password' value='' name='body[password]' minlength='5' required />
               </div>
+
               <div style={{ float: 'left' }}>
 
                 <button type='submit' name='submit' id='sign-in' value='send' className='btn btn-primary'>Sign in</button>
