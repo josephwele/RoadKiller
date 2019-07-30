@@ -7,7 +7,7 @@ function App () {
   return (
     <div className='App'>
       <NavBar />
-
+      <div class="container"></div>
       <div className='col-1-3'>
         <h1><b>Sign Up</b></h1>
         <div className='first-name' style={{float: 'left', marginRight: '20px', clear: 'both'}}>

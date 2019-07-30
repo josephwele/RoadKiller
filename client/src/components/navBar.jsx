@@ -4,7 +4,7 @@ import React from 'react';
 export class NavBar extends React.Component {
   render () {
     return (
-          <div className='card text-center'>
+          <div className='card text-center' style={{marginBottom: '0px'}}>
               <nav className='navbar'>
 
           <div className='bikes'>
@@ -20,7 +20,7 @@ export class NavBar extends React.Component {
             </select>
 
           </div>
-          <div className='form'>
+          <div className='form' >
               <form action='/user/login' method='post'>
 
                   <div style={{ float: 'left', marginRight: '20px' }}>
