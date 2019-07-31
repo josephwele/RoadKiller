@@ -12,7 +12,7 @@ export class SignUp extends React.Component {
         <div className='jumbotron jumbotron-fluid'style ={ { backgroundImage: "url("+Sky+")" } } >
             
             <div className='container'>
-            <h1 className='display-4'><b>Sign Up</b></h1>
+            <h1 className='display-4'>Sign Up</h1>
             <p className='lead'>JOIN OUR TEAM FOR BUILDING STRONG MINDS, BODIES AND CHARACTER!!</p>
             </div>
           
