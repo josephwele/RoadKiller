@@ -1,5 +1,5 @@
 import React from 'react'
-import Sky from '../sky.jpg';
+import Sky from '../Sky.png';
 
 
 export class SignUp extends React.Component {
@@ -10,11 +10,12 @@ export class SignUp extends React.Component {
       <div className='signUp'>
 
         <div className='jumbotron jumbotron-fluid'style ={ { backgroundImage: "url("+Sky+")" } } >
+            
             <div className='container'>
             <h1 className='display-4'><b>Sign Up</b></h1>
-            <p className='lead'>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-            
-          </div>
+            <p className='lead'>JOIN OUR TEAM FOR BUILDING STRONG MINDS, BODIES AND CHARACTER!!</p>
+            </div>
+          
                   </div>
                  <div className='container'>
 
@@ -43,7 +44,7 @@ export class SignUp extends React.Component {
             </div>
 </div>
 
-  <div className='col-2-3'>
+  <div className='col-2-3 form-group form'>
 
             <div className='drop-down'>
               <p>Birthdate</p>
