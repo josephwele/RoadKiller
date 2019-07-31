@@ -4,33 +4,25 @@ import React from 'react';
 export class NavBar extends React.Component {
   render () {
     return (
-          <div className='card text-center' style={{marginBottom: '0px'}}>
+          <div className='card text-center'   style={{ position: 'fixed', left: '0px',  width: '100%' }}>
               <nav className='navbar'>
 
-          <div className='bikes'>
-            <h1>BIKES</h1>
-            </div>
+          
+            <h1>RoadKiller</h1>
+          
 
-            <div className='dropdown' style={{position: 'absolute', left:'15px', bottom: '0px', }}>
-              <select name='bike'>
-              <option value='components'>COMPONENTS</option>
-              <option value='accesories'>ACCESORIES</option>
-              <option value='contact'>CONTACT</option>
-
-            </select>
-
-          </div>
+            
           <div className='form-group' >
               <form action='/user/login' method='post'>
 
-                  <div style={{ float: 'left', marginRight: '20px', paddingBottom:'50px'}}>
+                  <div style={{  marginRight: '20px', paddingTop:'26px'}}>
                 <label for='email'>Email:</label>
                 <input id='email' type='text' value='' name='body[email]' required />
                       <label for='password'>Password:</label>
                 <input id='password' type='password' value='' name='body[password]' minlength='5' required />
               </div>
 
-              <div style={{ float: 'left' }}>
+              <div style={{ float: 'left',marginRight: '0px' }}>
 
                 <button type='submit' name='submit' id='sign-in' value='send' className='btn btn-primary'>Sign in</button>
               </div>
