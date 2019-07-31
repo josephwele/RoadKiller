@@ -1,6 +1,7 @@
 .navbar {
-  background: teal;
+  background: #221B43;
   height: 100px;
+  color: white;
 }
 
 .form {
