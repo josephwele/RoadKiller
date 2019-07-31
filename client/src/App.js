@@ -1,18 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import  {NavBar}  from './components/navBar.jsx'
-import {SignUp} from './components/signUp.jsx'
-import  {Footer}  from './components/footer.jsx'
+import React from 'react'
+import { NavBar } from './components/navBar.jsx'
+import { Footer } from './components/footer.jsx'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Home } from './pages/home'
+import { detail } from './pages/detail'
 
-function App () {
-  return (
-    <div className='App'>
-      <NavBar />
-      <SignUp />
-      <Footer />
+function App() {
+    return ( <
+        >
+        <
+        NavBar / >
+        <
+        Router >
+        <
+        Switch >
+        <
+        Route exact path = '/'
+        component = { Home }
+        /> < /
+        Switch >
+        <
+        /Router> < / >
 
-    </div>
-  )
+
+
+    )
 }
 
 export default App
