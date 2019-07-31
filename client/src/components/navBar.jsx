@@ -21,7 +21,7 @@ export class NavBar extends React.Component {
 
           </div>
           <div className='form-group' >
-              <form action='/user/login' method='post'>
+              <form>
 
                   <div style={{ float: 'left', marginRight: '20px', paddingBottom:'50px'}}>
                 <label for='email'>Email:</label>
@@ -32,7 +32,7 @@ export class NavBar extends React.Component {
 
               <div style={{ float: 'left' }}>
 
-                <button type='submit' name='submit' id='sign-in' value='send' className='btn btn-primary'>Sign in</button>
+                <button type='submit' name='submit' id='sign-in' value='send' className='btn btn-primary' onClick={this.props.handleSignIn(this.name)}>Sign in</button>
               </div>
 
               <br style={{ clear: 'both' }} />

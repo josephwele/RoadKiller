@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
+import { NavBar } from '../components/navBar';
 
-export class detail extends Component {
+export class Detail extends Component {
     render() {
-        return ( <
-            div >
+        return ( < div >
             <
-            h1 > Hello!!Well come < /h1> <
+            NavBar / >
+            <
+            h1 > Hello!!Well come <
+            /h1> <
             /div>
         )
     }
 }
 
-export default detail
+export default Detail
