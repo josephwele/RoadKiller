@@ -10,14 +10,17 @@ export class SignUp extends React.Component {
       gender:'' }
 }
   
-  
   handleOnChange=(event)=>{
-      this.setState({state:event.target.value})
+      this.setState({[event.target.name]:event.target.value})
   }
-  render () {
+ render () {
     return (
+      
+
+     
       <div className='signUp text-center'>
                  <div className='container'>
+                 <form onSubmit={this.props.handleSignUp(this.state)}>
 
             <div className='col-1-3'>
   <div className='first-name' style={{ marginRight: '20px', clear: 'both' }}>
@@ -57,14 +60,10 @@ export class SignUp extends React.Component {
               <input value={this.state.gender} type='radio' name='gender' value='Other' />Other
             </div><br />
             <div className='account-action'>
-              <input  id='btn' type='submit' name='submit' value='Sign Up' />
-              <label>
-                <input type='checkbox' name='remember' /> Stay signed in
-              </label>
+              <input className='btn btn-lg primary pb-2 mb-5' id='btn' type='submit' name='submit' value='Sign Up'/>
             </div>
-
           </div>
-
+          </form>
         </div>
       </div>
 

@@ -6,11 +6,15 @@ import API from '../utils/API';
 import Jumbotron from '../components/jumbotron/jumbotron';
 
 export class Home extends Component {
-    handleSignIn = (userName, password) => {
+    handleSignIn = (event) => {
+        event.preventDefault()
         API.signIN({
-            userName: userName,
-            password: password
+            userName: event.userName,
+            password: event.password
         })
+    }
+    handleSignUp = (data) => {
+        console.log(data)
     }
     render() {
         return ( < div >
@@ -19,8 +23,8 @@ export class Home extends Component {
             / >  <
             Jumbotron / >
             <
-            SignUp / >
-            <
+            SignUp handleSignUp = { this.handleSignUp }
+            / > <
             Footer / >
             <
             /div>
