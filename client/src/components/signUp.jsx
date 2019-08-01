@@ -16,16 +16,16 @@ export class SignUp extends React.Component {
   }
   render () {
     return (
-      <div className='signUp'>
+      <div className='signUp text-center'>
                  <div className='container'>
 
             <div className='col-1-3'>
-  <div className='first-name' style={{ float: 'left', marginRight: '20px', clear: 'both' }}>
+  <div className='first-name' style={{ marginRight: '20px', clear: 'both' }}>
               <label for='first-name'>
             <input value={this.state.name} type='text' name='name' id='first-name' placeholder='First Name' onChange={this.handleOnChange} />
           </label>
             </div>
-  <div className='last-name' style={{ float: 'left' }}>
+  <div className='last-name'>
               <label for='last-name'>
                 <input value={this.state.lastName} type='text' name='name' id='last-name' placeholder='Last Name' onChange={this.handleOnChange} />
               </label>
@@ -47,7 +47,7 @@ export class SignUp extends React.Component {
 
             <div className='drop-down'>
               <p>Birthdate</p>
-              <input value={this.state.birthdate} type='date' name='birthdate' style={{ display: 'block' }} onChange={this.handleOnChange} />
+              <input value={this.state.birthdate} type='date' name='birthdate' onChange={this.handleOnChange} />
             </div><br />
 
             <div className='gender' onChange={this.handleOnChange}>
