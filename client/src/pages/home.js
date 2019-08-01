@@ -14,6 +14,7 @@ export class Home extends Component {
         })
     }
     handleSignUp = (data) => {
+        API.signUp(data)
         console.log(data)
     }
     render() {

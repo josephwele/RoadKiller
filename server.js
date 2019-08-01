@@ -60,6 +60,6 @@ app.use(function(err, req, res, next) {
         error: {}
     })
 })
-app.listen(8080, function() {
+app.listen(3001, function() {
     console.log('server listening')
 })
