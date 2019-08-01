@@ -1,4 +1,5 @@
 import React from 'react';
+import Signin from './signin';
 
 
 export class NavBar extends React.Component {
@@ -20,24 +21,8 @@ export class NavBar extends React.Component {
             </select>
 
           </div>
-          <div className='form-group' >
-              <form>
-
-                  <div style={{ float: 'left', marginRight: '20px', paddingBottom:'50px'}}>
-                <label for='email'>Email:</label>
-                <input id='email' type='text' value='' name='body[email]' required />
-                      <label for='password'>Password:</label>
-                <input id='password' type='password' value='' name='body[password]' minlength='5' required />
-              </div>
-
-              <div style={{ float: 'left' }}>
-
-                <button type='submit' name='submit' id='sign-in' value='send' className='btn btn-primary' onClick={this.props.handleSignIn(this.name)}>Sign in</button>
-              </div>
-
-              <br style={{ clear: 'both' }} />
-
-            </form>
+          <div>
+              <Signin handleSignIn={this.props.handleSignIn}/>
           </div>
         </nav>
       </div>

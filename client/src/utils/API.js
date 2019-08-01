@@ -1,5 +1,5 @@
 export default {
-    //login 
+    // login 
     signIN: function(data) {
         return fetch('/login', {
             method: 'POST',
