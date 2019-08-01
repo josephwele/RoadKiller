@@ -4,8 +4,8 @@ import { SignUp } from '../components/signUp'
 import { Footer } from './../components/footer'
 
 export class Home extends Component {
-    handleSignIn = () => {
-        alert('clicked')
+    handleSignIn = (userName, password) => {
+        alert(`${userName} good job ${password}`)
     }
     render() {
         return ( < div >
