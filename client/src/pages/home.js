@@ -3,6 +3,7 @@ import { NavBar } from '../components/navBar'
 import { SignUp } from '../components/signUp'
 import { Footer } from './../components/footer'
 import API from '../utils/API';
+import Jumbotron from '../components/jumbotron/jumbotron';
 
 export class Home extends Component {
     handleSignIn = (userName, password) => {
@@ -15,7 +16,9 @@ export class Home extends Component {
         return ( < div >
             <
             NavBar handleSignIn = { this.handleSignIn }
-            / > <
+            / >  <
+            Jumbotron / >
+            <
             SignUp / >
             <
             Footer / >
