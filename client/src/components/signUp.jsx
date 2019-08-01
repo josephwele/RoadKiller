@@ -1,5 +1,6 @@
 import React from 'react'
 import Sky from '../Sky.png'
+import Biker from '../Biker.png'
 
 export class SignUp extends React.Component {
   render () {
@@ -15,11 +16,11 @@ export class SignUp extends React.Component {
           </div>
 
         </div>
-        <div className='container'>
+        <div className='container' style={{backgroundImage: 'url(' + Biker + ')',}}>
 
         <h2>SignUp here</h2>
 
-<div className='hero'>
+<div className='hero' >
   <form action="/action_page.php">
     <label for="fname">First Name</label>
     <input className="input" type="text" id="fname" name="firstname" placeholder="Your name.."/>
@@ -46,7 +47,7 @@ export class SignUp extends React.Component {
       <option value="usa">USA</option>
     </select>
   
-    <input className="input" type="submit" value="Submit"/>
+    <input className="input"   type="submit" value="Submit"/>
   </form>
 </div>
         </div>

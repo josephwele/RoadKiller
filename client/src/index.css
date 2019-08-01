@@ -92,6 +92,8 @@ input {
 label{
   margin-right: 5px;
   font-size: 25px;
+  color: #0069D9;
+  
    
 }
 
@@ -104,6 +106,7 @@ label{
 }
     
 .input[type=text], select {
+  
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -115,7 +118,7 @@ label{
 
 .input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #0069D9;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -125,14 +128,14 @@ label{
 }
 
 .input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #2414b4;
 }
 
-.hero {
+/*.hero {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-}
+}*/
     
   
 
