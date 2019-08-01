@@ -4,17 +4,17 @@ const Account = require('../models/user')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    res.render('index', { user: req.user })
+    // res.render('index', { user: req.user })
 })
 
 router.get('/register', (req, res) => {
-    res.render('register', {})
+    // res.render('register', {})
 })
 
 router.post('/register', (req, res, next) => {
     Account.register(new Account({ username: req.body.username }), req.body.password, (err, account) => {
         if (err) {
-            return res.render('register', { error: err.message })
+            return // res.render('register', { error: err.message })
         }
 
         passport.authenticate('local')(req, res, () => {
@@ -29,7 +29,8 @@ router.post('/register', (req, res, next) => {
 })
 
 router.get('/login', (req, res) => {
-    res.render('login', { user: req.user, error: req.flash('error') })
+    console.log('login requested')
+        // res.render('login', { user: req.user, error: req.flash('error') })
 })
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
