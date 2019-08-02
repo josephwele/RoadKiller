@@ -5,10 +5,12 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     // res.render('index', { user: req.user })
+    res.send("status is ok")
 })
 
 router.get('/register', (req, res) => {
     // res.render('register', {})
+    res.send("status is ok")
 })
 
 router.post('/register', (req, res, next) => {

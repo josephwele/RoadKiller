@@ -3,7 +3,8 @@ export class SignUp extends React.Component {
   constructor(props){
     super(props)
     this.state ={
-      name:'',
+      firstName:'',
+      lastName:'',
       email:'',
       pass:'',
       birthdate:'',
@@ -24,14 +25,14 @@ export class SignUp extends React.Component {
 
             <div className='col-1-3'>
   <div className='first-name' style={{ marginRight: '20px', clear: 'both' }}>
-              <label for='first-name'>
-            <input value={this.state.name} type='text' name='name' id='first-name' placeholder='First Name' onChange={this.handleOnChange} />
-          </label>
+              <label for='first-name'>First Name: </label>
+            <input value={this.state.name} type='text' name='firstName' id='first-name' placeholder='First Name' onChange={this.handleOnChange} />
+          
             </div>
   <div className='last-name'>
-              <label for='last-name'>
-                <input value={this.state.lastName} type='text' name='name' id='last-name' placeholder='Last Name' onChange={this.handleOnChange} />
-              </label>
+              <label for='last-name'>Last Name: </label>
+                <input value={this.state.lastName} type='text' name='lastName' id='last-name' placeholder='Last Name' onChange={this.handleOnChange} />
+              
             </div>
   <br style={{ clear: 'both' }} />
   <div className='e-mail'>

@@ -9,7 +9,7 @@ export class Signin extends Component {
     }
     
     handleChange=(event)=>{
-        this.setState({[this.event.name]:event.target.value})
+        this.setState({[event.target.name]:event.target.value})
         
     }
     handleSign=()=>{

@@ -9,13 +9,15 @@ export class Home extends Component {
     handleSignIn = (event) => {
         event.preventDefault()
         API.signIN({
-            userName: event.userName,
-            password: event.password
-        })
+                userName: event.userName,
+                password: event.password
+            })
+            .then(res => res.json())
+            .then(res =>
+                console.log(res))
     }
     handleSignUp = (data) => {
         API.signUp(data)
-        console.log(data)
     }
     render() {
         return ( < div >
