@@ -13,6 +13,7 @@ export class NavBar extends React.Component {
             </div>
           <div>
               <Signin handleSignIn={this.props.handleSignIn}/>
+
           </div>
         </nav>
       </div>
