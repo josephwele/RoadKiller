@@ -5,8 +5,8 @@ import Signin from './signin';
 export class NavBar extends React.Component {
   render () {
     return (
-          <div className='card text-center' style={{marginBottom: '0px'}}>
-              <nav className='navbar'>
+          <div>
+              <nav className='navbar navbar-dark bg-primary'>
 
           <div className='bikes'>
             <h1>BIKES</h1>

@@ -13,8 +13,7 @@ export class Home extends Component {
                 password: event.password
             })
             .then(res => res.json())
-            .then(res =>
-                console.log(res))
+            .then(res => console.log(res))
     }
     handleSignUp = (data) => {
         API.signUp(data)
