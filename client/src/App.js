@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavBar } from './components/navBar.jsx'
+import { NavBar } from './components/navBar/navBar'
 
-import { Footer } from './components/footer.jsx'
+import { Footer } from './components/footer/footer'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Home } from './pages/home'
 import { Detail } from './pages/detail'

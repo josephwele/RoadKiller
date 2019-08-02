@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { NavBar } from '../components/navBar'
-import { SignUp } from '../components/signUp'
-import { Footer } from './../components/footer'
+import { NavBar } from '../components/navBar/navBar'
+import { SignUp } from '../components/signUp/signUp'
+import { Footer } from './../components/footer/footer'
 import API from '../utils/API';
 import Jumbotron from '../components/jumbotron/jumbotron';
 
 export class Home extends Component {
     handleSignIn = (event) => {
+        //prevent submit
         event.preventDefault()
         API.signIN({
                 userName: event.userName,

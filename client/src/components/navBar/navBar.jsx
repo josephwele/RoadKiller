@@ -1,5 +1,5 @@
 import React from 'react';
-import Signin from './signin';
+import Signin from '../signin/signin';
 
 
 export class NavBar extends React.Component {

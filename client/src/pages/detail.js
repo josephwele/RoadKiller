@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import { NavBar } from '../components/navBar'
+import { NavBar } from '../components/navBar/navBar'
 
 export class Detail extends Component {
     render() {
-        //rendering the file
+        // rendering the file
         return ( < div >
             <
             NavBar / >
             <
             h1 > Hello!!Well come <
-            /h1> < /
-            div >
+            /h1> <
+            / div>
         )
     }
 }
