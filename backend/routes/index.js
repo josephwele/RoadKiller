@@ -5,12 +5,12 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     // res.render('index', { user: req.user })
-    res.send("status is ok")
+    res.send('status is ok')
 })
 
 router.get('/register', (req, res) => {
     // res.render('register', {})
-    res.send("status is ok")
+    res.send('status is ok')
 })
 
 router.post('/register', (req, res, next) => {
@@ -28,10 +28,11 @@ router.post('/register', (req, res, next) => {
             })
         })
     })
+    res.send("ok")
 })
 
 router.get('/login', (req, res) => {
-    console.log('login requested')
+    res.send('login requested')
         // res.render('login', { user: req.user, error: req.flash('error') })
 })
 
@@ -55,7 +56,7 @@ router.get('/logout', (req, res, next) => {
 })
 
 router.get('/form', (req, res) => {
-    res.status(200).send('pong!')
+    res.status(200)
 })
 
 module.exports = router

@@ -1,6 +1,7 @@
 export default {
     // login 
     signIN: function(data) {
+        alert("signin reached")
         return fetch('/login', {
             method: 'POST',
             Headers: {
@@ -17,6 +18,11 @@ export default {
                 'content-Type': 'application/json'
             },
             body: JSON.stringify(info)
+        })
+    },
+    logOut: function() {
+        return fetch('/logout', {
+            method: 'GET'
         })
     }
 }

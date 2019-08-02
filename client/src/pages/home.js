@@ -12,11 +12,13 @@ export class Home extends Component {
                 userName: event.userName,
                 password: event.password
             })
-            .then(res => res.json())
-            .then(res => console.log(res))
+            .then(res => (res.status == 200) ? alert("ok") : alert("no"))
+            .catch(err => console(err))
     }
     handleSignUp = (data) => {
         API.signUp(data)
+            .then(res => (res.status == 200) ? alert("ok") : alert("no"))
+            .catch(err => console.error(err))
     }
     render() {
         return ( < div >
