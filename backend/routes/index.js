@@ -4,17 +4,19 @@ const Account = require('../models/user')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    res.render('index', { user: req.user })
+    // res.render('index', { user: req.user })
+    res.send('status is ok')
 })
 
 router.get('/register', (req, res) => {
-    res.render('register', {})
+    // res.render('register', {})
+    res.send('status is ok')
 })
 
 router.post('/register', (req, res, next) => {
     Account.register(new Account({ username: req.body.username }), req.body.password, (err, account) => {
         if (err) {
-            return res.render('register', { error: err.message })
+            return // res.render('register', { error: err.message })
         }
 
         passport.authenticate('local')(req, res, () => {
@@ -26,10 +28,12 @@ router.post('/register', (req, res, next) => {
             })
         })
     })
+    res.send("ok")
 })
 
 router.get('/login', (req, res) => {
-    res.render('login', { user: req.user, error: req.flash('error') })
+    res.send('login requested')
+        // res.render('login', { user: req.user, error: req.flash('error') })
 })
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
@@ -52,7 +56,7 @@ router.get('/logout', (req, res, next) => {
 })
 
 router.get('/form', (req, res) => {
-    res.status(200).send('pong!')
+    res.status(200)
 })
 
 module.exports = router
