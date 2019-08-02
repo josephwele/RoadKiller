@@ -7,6 +7,7 @@ import Jumbotron from '../components/jumbotron/jumbotron';
 
 export class Home extends Component {
     handleSignIn = (event) => {
+        //prevent submit
         event.preventDefault()
         API.signIN({
                 userName: event.userName,
