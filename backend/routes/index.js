@@ -28,7 +28,7 @@ router.post('/register', (req, res, next) => {
             })
         })
     })
-    res.send("ok")
+    res.send('ok')
 })
 
 router.get('/login', (req, res) => {
