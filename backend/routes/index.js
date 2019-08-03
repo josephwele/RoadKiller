@@ -5,18 +5,19 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     // res.render('index', { user: req.user })
-    res.send('status is ok')
+    res.send('you have reached the home page')
 })
 
 router.get('/register', (req, res) => {
-    // res.render('register', {})
-    res.send('status is ok')
+    res.send('login currently')
+    console.log('register accessed')
+        // res.render('register', {})
 })
 
 router.post('/register', (req, res, next) => {
-    Account.register(new Account({ username: req.body.username }), req.body.password, (err, account) => {
+    Account.register(new Account({ username: req.body.email }), req.body.pass, (err, account) => {
         if (err) {
-            return // res.render('register', { error: err.message })
+            return res.send(err)
         }
 
         passport.authenticate('local')(req, res, () => {
@@ -28,11 +29,11 @@ router.post('/register', (req, res, next) => {
             })
         })
     })
-    res.send('ok')
+    res.send('status fine')
 })
 
 router.get('/login', (req, res) => {
-    res.send('login requested')
+    console.log('login requested')
         // res.render('login', { user: req.user, error: req.flash('error') })
 })
 
@@ -56,7 +57,7 @@ router.get('/logout', (req, res, next) => {
 })
 
 router.get('/form', (req, res) => {
-    res.status(200)
+    res.status(200).send('pong!')
 })
 
 module.exports = router

@@ -12,7 +12,8 @@ export class Signin extends Component {
         this.setState({[event.target.name]:event.target.value})
         
     }
-    handleSign=()=>{
+    handleSign=(event)=>{
+        event.preventDefault();
         this.props.handleSignIn(this.state)
     }
     render() {
@@ -30,7 +31,7 @@ export class Signin extends Component {
 </div>
 </div>
 <div style={{ float: 'left' }}>
-<button type='submit' name='submit' id='sign-in' value='send' className='btn btn-primary'>Sign in</button>
+<button name='submit' id='sign-in' className='btn btn-primary' onClick={this.handleSign}>Sign in</button>
 </div>
 <br style={{ clear: 'both' }} />
 
