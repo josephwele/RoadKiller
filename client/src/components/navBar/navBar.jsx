@@ -10,7 +10,6 @@ export class NavBar extends React.Component {
               <nav className='navbar '>
 
           <div className='bikes'>
-            <h1> ROADKILLER BIKES</h1>
             </div>
           <div>
               <Signin handleSignIn={this.props.handleSignIn}/>

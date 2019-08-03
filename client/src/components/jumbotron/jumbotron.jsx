@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Sky from './Sky.png';
+import Sky from './sky.png';
 import './jumbotron.css';
 
 

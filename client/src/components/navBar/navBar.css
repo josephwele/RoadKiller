@@ -1,7 +1,7 @@
 .navbar {
-    color: white;
+    color: black;
     background: #221B43;
-    
+    background-image: url(navbar.png)    
   }
 
   h1{
