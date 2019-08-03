@@ -1,5 +1,7 @@
 // changed all the files by Jayant Rai
 import React from 'react'
+import Biker from './Biker.png'
+import './signUp.css'
 
 
 
@@ -23,7 +25,7 @@ export class SignUp extends React.Component {
     return (
       
      
-      <div className='signUp text-center' >
+      <div className='signUp text-center'style={{ backgroundImage: 'url(' + Biker + ')'}} >
                  <div className='container'>
                  <form onSubmit={this.props.handleSignUp(this.state)}>
 
@@ -71,32 +73,7 @@ export class SignUp extends React.Component {
           </form>
 
         </div>
-        {/* input for lastName */}
-      <div className='form-group' style={{ float: 'left', marginRight: '20px', clear: 'both' }}>
-        <label>Last Name: </label>
-            <input type='text' required className='form-control' value={this.state.lastName} onChange={this.onChangelastName} />
-      </div>  
-        {/* input for email */}
-      <div className='form-group' style={{ float: 'left', marginRight: '20px', clear: 'both' }}>
-        <label>Email: </label>
-            <input type='text' required className='form-control' value={this.state.email} onChange={this.onChangeemail} />
-      </div> 
-        {/* input for password */}
-      <div className='form-group' style={{ float: 'left', marginRight: '20px', clear: 'both' }}>
-        <label>Password: </label>
-            <input type='text' required className='form-control' value={this.state.password} onChange={this.onChangepassword} />
-      </div> 
-       {/* input for date */}
-      <div className='form-group' style={{ float: 'left', marginRight: '20px', clear: 'both' }}>
-        <label>Birthdate: </label>
-        {/* for date picker installed react datepicker npm package */}
-            
-            selected={this.state.birthdate} onChange={this.onChangebirthdate} />
-      </div>    
-      
-      <div className='form-group'>
-        <input type='submit' value='Create Riders Log' className='btn btn-primary' />  
-      </div>
+        
       </div> 
       
     
