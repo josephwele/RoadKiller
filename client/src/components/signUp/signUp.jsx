@@ -1,5 +1,8 @@
 // changed all the files by Jayant Rai
 import React from 'react'
+
+
+
 export class SignUp extends React.Component {
   constructor(props){
     super(props)
@@ -20,7 +23,7 @@ export class SignUp extends React.Component {
     return (
       
      
-      <div className='signUp text-center'>
+      <div className='signUp text-center' >
                  <div className='container'>
                  <form onSubmit={this.props.handleSignUp(this.state)}>
 
