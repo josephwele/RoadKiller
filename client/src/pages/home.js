@@ -31,7 +31,7 @@ export class Home extends Component {
                 pass: this.state.pass
             })
             .then(res => (res.status === 200) ? alert("yes") : alert("no"))
-            .catch(err => console(err))
+            .catch(err => alert("error"))
     }
     handleSignUp = (event) => {
         event.preventDefault()
