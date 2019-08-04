@@ -6,29 +6,50 @@ import API from '../utils/API';
 import Jumbotron from '../components/jumbotron/jumbotron';
 
 export class Home extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isLogedIn: 'false',
+            firstName: '',
+            lastName: '',
+            email: '',
+            pass: '',
+            birthdate: '',
+            gender: ''
+        }
+    }
+    handleOnChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
     handleSignIn = (event) => {
         //prevent submit
-        event.preventDefault()
+        alert("signin clicked")
         API.signIN({
-                userName: event.userName,
-                password: event.password
+                email: this.state.email,
+                pass: this.state.pass
             })
-            .then(res => (res.status == 200) ? alert("ok") : alert("no"))
+            .then(res => (res.status === 200) ? alert("yes") : alert("no"))
             .catch(err => console(err))
     }
-    handleSignUp = (data) => {
-        API.signUp(data)
-            .then(res => (res.status == 200) ? alert("ok") : alert("no"))
+    handleSignUp = (event) => {
+        event.preventDefault()
+        alert("clicked")
+        API.signUp(this.state)
+            .then(res => (res.status === 200) ? alert("ok") : alert("no"))
             .catch(err => console.error(err))
     }
     render() {
         return ( < div >
             <
-            NavBar handleSignIn = { this.handleSignIn }
+            NavBar handleOnChange = { this.handleOnChange }
+            handleSignIn = { this.handleSignIn }
             / >  <
             Jumbotron / >
             <
-            SignUp handleSignUp = { this.handleSignUp }
+            SignUp handleOnChange = { this.handleOnChange }
+            handleSignUp = { this.handleSignUp }
             / > <
             Footer / >
             <
