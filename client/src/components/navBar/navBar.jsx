@@ -4,7 +4,12 @@ import navBar from './navBar.css';
 
 
 export class NavBar extends React.Component {
-  render () {
+  handleSignIn=(event)=>{
+    event.preventDefault()
+    this.props.handleSignIn()
+  }
+ 
+   render () {
     return (
           <div>
               <nav className='navbar '>
@@ -12,7 +17,7 @@ export class NavBar extends React.Component {
           <div className='bikes'>
             </div>
           <div>
-              <Signin handleSignIn={this.props.handleSignIn}/>
+              <Signin handleOnChange={this.props.handleOnChange} handleSignIn={this.handleSignIn}/>
 
           </div>
         </nav>

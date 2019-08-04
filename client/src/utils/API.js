@@ -1,7 +1,7 @@
 export default {
     // login 
     signIN: function(data) {
-        alert("signin reached")
+        alert('signin reached')
         return fetch('/login', {
             method: 'POST',
             Headers: {
