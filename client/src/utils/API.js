@@ -1,11 +1,12 @@
 export default {
     // login 
     signIN: function(data) {
+        console.log(data)
         alert('signin reached')
-        return fetch('/login', {
-            method: 'POST',
+        return fetch('/', {
+            method: 'GET',
             Headers: {
-                'content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
 
@@ -15,9 +16,9 @@ export default {
         return fetch('/register', {
             method: 'POST',
             Headers: {
-                'content-Type': 'application/json'
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: JSON.stringify(info)
+            body: 'info'
         })
     },
     logOut: function() {

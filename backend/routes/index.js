@@ -2,34 +2,32 @@ const express = require('express')
 const passport = require('passport')
 const Account = require('../models/user')
 const router = express.Router()
-
 router.get('/', (req, res) => {
-    // res.render('index', { user: req.user })
-    res.send('you have reached the home page')
+    res.sendFile(path.join('__dirname, ../../client/build/index.html'))
 })
 
 router.get('/register', (req, res) => {
-    res.send('login currently')
-    console.log('register accessed')
-        // res.render('register', {})
+    console.log(req.body)
+    res.redirect('/')
 })
 
 router.post('/register', (req, res, next) => {
+    console.log('from index', req.body)
     Account.register(new Account({ username: req.body.email }), req.body.pass, (err, account) => {
-        if (err) {
-            return res.send(err)
-        }
+            if (err) {
+                return res.send(err)
+            }
 
-        passport.authenticate('local')(req, res, () => {
-            req.session.save((err) => {
-                if (err) {
-                    return next(err)
-                }
-                res.redirect('/')
+            passport.authenticate('local')(req, res, () => {
+                req.session.save((err) => {
+                    if (err) {
+                        return err
+                    }
+                    res.redirect('/')
+                })
             })
         })
-    })
-    res.send('status fine')
+        // res.send('status fine')
 })
 
 router.get('/login', (req, res) => {
@@ -38,7 +36,6 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
-
         res.send('loged in correctly')
     }
 

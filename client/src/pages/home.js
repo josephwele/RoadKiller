@@ -4,8 +4,10 @@ import { SignUp } from '../components/signUp/signUp'
 import { Footer } from './../components/footer/footer'
 import API from '../utils/API';
 import Jumbotron from '../components/jumbotron/jumbotron';
+import { Redirect } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
-export class Home extends Component {
+export class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -23,22 +25,32 @@ export class Home extends Component {
             [event.target.name]: event.target.value
         })
     }
+
     handleSignIn = (event) => {
         //prevent submit
         alert("signin clicked")
         API.signIN({
-                email: this.state.email,
-                pass: this.state.pass
+                username: this.state.email,
+                password: this.state.pass
             })
-            .then(res => (res.status === 200) ? alert("yes") : alert("no"))
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 200) {}
+            })
             .catch(err => alert("error"))
     }
     handleSignUp = (event) => {
         event.preventDefault()
         alert("clicked")
         API.signUp(this.state)
-            .then(res => (res.status === 200) ? alert("ok") : alert("no"))
-            .catch(err => console.error(err))
+            .then(res => {
+                if (res.status === 200) {
+                    alert("ok")
+                    this.props.handleRedirect()
+                }
+            })
+
+        .catch(err => console.error(err))
     }
     render() {
         return ( < div >
