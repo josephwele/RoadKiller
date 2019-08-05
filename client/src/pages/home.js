@@ -30,27 +30,33 @@ export class Home extends React.Component {
         //prevent submit
         alert("signin clicked")
         API.signIN({
-                username: this.state.email,
-                password: this.state.pass
+                email: this.state.email,
+                pass: this.state.pass
             })
             .then(res => res.json())
-            .then(res => {
-                if (res.status === 200) {}
-            })
-            .catch(err => alert("error"))
+            .then(res => (res.status === 200) ? alert("ok") : alert(res))
+            .catch(err => console.log(err))
     }
     handleSignUp = (event) => {
         event.preventDefault()
         alert("clicked")
-        API.signUp(this.state)
+        API.signUp({
+                email: this.state.email,
+                pass: this.state.pass
+            })
+            .then(res => res.json())
             .then(res => {
                 if (res.status === 200) {
-                    alert("ok")
-                    this.props.handleRedirect()
+                    alert("from 200", res[1]);
+
+                } else if (res.status === 400) {
+                    alert("from 400", res[0])
                 }
+
             })
 
-        .catch(err => console.error(err))
+        .catch(err => alert("error", err));
+
     }
     render() {
         return ( < div >

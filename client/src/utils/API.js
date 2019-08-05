@@ -3,9 +3,9 @@ export default {
     signIN: function(data) {
         console.log(data)
         alert('signin reached')
-        return fetch('/', {
-            method: 'GET',
-            Headers: {
+        return fetch('/login', {
+            method: 'POST',
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
@@ -13,12 +13,14 @@ export default {
         })
     },
     signUp: function(info) {
+        alert('signup reached')
+        console.log(info)
         return fetch('/register', {
             method: 'POST',
-            Headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+            headers: {
+                'Content-Type': 'application/json'
             },
-            body: 'info'
+            body: JSON.stringify(info)
         })
     },
     logOut: function() {

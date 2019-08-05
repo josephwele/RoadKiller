@@ -16,8 +16,6 @@ var app = express()
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.json())
-app.use(bodyParser.json())
 app.use(require('express-session')({
     secret: 'coding class is a mess',
     resave: false,
@@ -34,18 +32,15 @@ passport.serializeUser(Account.serializeUser())
 passport.deserializeUser(Account.deserializeUser())
 
 // mongoose
+mongoose.Promise = require('bluebird')
+mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/Roadkiller',
     function() {
         console.log('mongose started')
     })
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-        var err = new Error('Not Found')
-        err.status = 404
-        next(err)
-    })
-    // Serve up static assets (usually on heroku)
+// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
 }

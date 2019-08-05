@@ -7,23 +7,24 @@ router.get('/', (req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    console.log(req.body)
-    res.redirect('/')
+    res.send('ok')
 })
 
 router.post('/register', (req, res, next) => {
     console.log('from index', req.body)
     Account.register(new Account({ username: req.body.email }), req.body.pass, (err, account) => {
             if (err) {
+                console.log(err.message)
                 return res.send(err)
             }
 
             passport.authenticate('local')(req, res, () => {
                 req.session.save((err) => {
                     if (err) {
-                        return err
+                        console.log(err.message)
+                        return res.send(err.message)
                     }
-                    res.redirect('/')
+                    res.redirect('/register')
                 })
             })
         })
@@ -32,14 +33,18 @@ router.post('/register', (req, res, next) => {
 
 router.get('/login', (req, res) => {
     console.log('login requested')
+    res.send('ok')
         // res.render('login', { user: req.user, error: req.flash('error') })
 })
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
-        res.send('loged in correctly')
-    }
-
-)
+    req.session.save((err) => {
+        if (err) {
+            console.log(err)
+        }
+        res.redirect('/login')
+    })
+})
 
 router.get('/logout', (req, res, next) => {
     req.logout()
