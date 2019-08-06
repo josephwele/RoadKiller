@@ -20,34 +20,38 @@ export class RideInfo extends Component {
             <h2><i>Where do you want to ride?</i></h2>
           </div>
 
+            <form onSubmit={this.props.handleSubmit}>
           <div>
             <p>Start Location</p>
-              <input type='text' name='start' id='start' placeholder='Zipcode' />
+                
+              <input value={this.props.start}  type='text' name='start' id='start' placeholder='Zipcode' onChange={this.props.handleOnChange}/>
           </div><br />
 
           <div>
 
               <p>Destination</p>
-            <input type='text' name='destination' id='destination' placeholder='Zipcode' />
+             
+            <input value={this.props.destination}  type='text' name='destination' id='destination' placeholder='Zipcode' onChange={this.props.handleOnChange}/>
           </div><br />
 
           <div>
 
               <p>Phone Number</p>
-              <input type='text' name='phonenum' className='phonenum' id='phonenum' placeholder='Phone Number' />
+              <input value={this.props.phonenum}  type='text' name='phonenum' className='phonenum' id='phonenum' placeholder='Phone Number' onChange={this.props.handleOnChange}/>
 
           </div><br />
 
           <div>
             <p>Starting Date</p>
-            <input type='date' name='date' id='date' />
+            <input value={this.props.date}  type='date' name='date' id='date' onChange={this.props.handleOnChange}/>
           </div><br />
           <div>
             <p>Starting time</p>
-            <input type='time' name='time' id='time' />
+            <input value={this.props.time}  type='time' name='time' id='time' onChange={this.props.handleOnChange}/>
           </div><br />
 
-          <button type='button' className='btn btn-primary'>Submit</button>
+          <button type='button' className='btn btn-primary' onClick={this.props.handleSubmit}>Submit</button>
+                </form>
         </div>
 
             </div>

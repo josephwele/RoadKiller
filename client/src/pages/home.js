@@ -19,10 +19,6 @@ export class Home extends React.Component {
             gender: ''
         }
     }
-
-    handle = () => {
-        this.props.this.handleRedirect()
-    }
     handleOnChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -37,7 +33,7 @@ export class Home extends React.Component {
                 pass: this.state.pass
             })
             .then(res => res.json())
-            .then(res => (res.status === 200) ? alert("ok") : alert(res))
+            .then(res => { this.props.handleRedirect() })
             .catch(err => console.log(err))
     }
     handleSignUp = (event) => {
