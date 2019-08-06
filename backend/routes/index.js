@@ -3,7 +3,7 @@ const passport = require('passport')
 const Account = require('../models/user')
 const router = express.Router()
 router.get('/', (req, res) => {
-    res.sendFile(path.join('__dirname, ../../client/build/index.html'))
+    res.sendFile(path.join(__dirname, 'RoadKiller/client/build/index.html'))
 })
 
 router.get('/register', (req, res) => {
