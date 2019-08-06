@@ -19,8 +19,7 @@ class App extends Component {
 
     render() {
         return ((this.state.isLogedIn) ? < Detail handleRedirect = { this.handleRedirect }
-            /  >
-            :
+            /  > :
             <
             Home handleRedirect = { this.handleRedirect }
             / >
