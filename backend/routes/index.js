@@ -1,10 +1,9 @@
 const express = require('express')
 const passport = require('passport')
 const Account = require('../models/user')
-const index = require('../../client/public/index.html')
 const router = express.Router()
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index'))
+    res.sendFile(path.join(__dirname, '../../client/build/index.html'))
 })
 
 router.get('/register', (req, res) => {
@@ -51,14 +50,14 @@ router.get('/logout', (req, res, next) => {
     req.logout()
     req.session.save((err) => {
         if (err) {
-            return next(err)
+            return res.send('not ok')
         }
         res.redirect('/')
     })
 })
 
 router.get('/form', (req, res) => {
-    res.status('form submitted')
+    res.send('form submitted')
 })
 
 module.exports = router
