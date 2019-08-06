@@ -16,7 +16,7 @@ export class RideInfo extends Component {
               </nav>
               </div>
 
-              <div className='form-group col-1-3 container' style={{ backgroundImage: 'url(' + Back + ')' }}>
+              <div className='form-group col-1-3 container form-ri' >
 
           <div className='heading'>
 
