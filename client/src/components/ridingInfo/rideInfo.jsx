@@ -10,7 +10,7 @@ export class RideInfo extends Component {
                 <div className='bikes'>
             <h1> ROADKILLER BIKES</h1>
           </div>
-          <button type='button' className='btn btn-primary'>Signout</button>
+          <button type='button' className='btn btn-primary' onClick={this.props.handleSignout}>Signout</button>
               </nav>
 
               <div className='form-group col-1-3 container' style={{ backgroundImage: 'url(' + Back + ')' }}>
