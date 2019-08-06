@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { NavBar } from '../components/navBar/navBar'
 import { RideInfo } from './../components/ridingInfo/rideInfo'
 import API from '../utils/API';
 

@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavBar } from '../components/navBar/navBar'
 import { SignUp } from '../components/signUp/signUp'
 import { Footer } from './../components/footer/footer'
 import API from '../utils/API';
 import Jumbotron from '../components/jumbotron/jumbotron';
-import { Redirect } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
+
 
 export class Home extends React.Component {
     constructor(props) {

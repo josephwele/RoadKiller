@@ -12,7 +12,7 @@ export class NavBar extends React.Component {
    render () {
     return (
           <div>
-              <nav className='navbar '>
+              <nav className='navbar' style={navBar}>
 
           <div className='bikes'>
             </div>

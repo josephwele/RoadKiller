@@ -1,8 +1,6 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Home } from './pages/home'
 import { Detail } from './pages/detail'
 import React, { Component } from 'react'
-import { RideInfo } from './components/ridingInfo/rideInfo'
 class App extends Component {
     constructor(props) {
         super(props)
@@ -19,8 +17,7 @@ class App extends Component {
 
     render() {
         return ((this.state.isLogedIn) ? < Detail handleRedirect = { this.handleRedirect }
-            /  > :
-            <
+            /  > : <
             Home handleRedirect = { this.handleRedirect }
             / >
         )
