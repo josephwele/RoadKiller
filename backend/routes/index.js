@@ -1,10 +1,10 @@
 const express = require('express')
 const passport = require('passport')
 const Account = require('../models/user')
+const index = require('../../client/public/')
 const router = express.Router()
 router.get('/', (req, res) => {
-    res.send("ok")
-        //res.sendFile(path.join(__dirname, 'RoadKiller/client/build/index.html'))
+    res.sendFile(path.join(__dirname, 'index'))
 })
 
 router.get('/register', (req, res) => {
