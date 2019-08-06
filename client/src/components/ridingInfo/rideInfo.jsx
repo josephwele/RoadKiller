@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import Back from './Back.png'
+import  './rideInfo.css'
 
 export class RideInfo extends Component {
   render () {
     return (
       <div>
-        <nav className='navbar '>
+        <div>
+        <nav className='Navbar '>
 
                 <div className='bikes'>
             <h1> ROADKILLER BIKES</h1>
           </div>
-          <button type='button' className='btn btn-primary' onClick={this.props.handleSignout}>Signout</button>
+          <button type='button' className='btn btn-primary btnp' onClick={this.props.handleSignout}>Signout</button>
               </nav>
+              </div>
 
               <div className='form-group col-1-3 container' style={{ backgroundImage: 'url(' + Back + ')' }}>
 
