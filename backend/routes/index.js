@@ -1,7 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 const Account = require('../models/user')
-const index = require('../../client/public/')
+const index = require('../../client/public/index.html')
 const router = express.Router()
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index'))
