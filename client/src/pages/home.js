@@ -11,7 +11,6 @@ export class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLogedIn: 'false',
             firstName: '',
             lastName: '',
             email: '',
@@ -19,6 +18,10 @@ export class Home extends React.Component {
             birthdate: '',
             gender: ''
         }
+    }
+
+    handle = () => {
+        this.props.this.handleRedirect()
     }
     handleOnChange = (event) => {
         this.setState({
@@ -45,17 +48,9 @@ export class Home extends React.Component {
                 pass: this.state.pass
             })
             .then(res => res.json())
-            .then(res => {
-                if (res.status === 200) {
-                    alert("from 200", res[1]);
+            .then(res => { this.props.handleRedirect() })
 
-                } else if (res.status === 400) {
-                    alert("from 400", res[0])
-                }
-
-            })
-
-        .catch(err => alert("error", err));
+        .catch(err => console.log(err));
 
     }
     render() {
