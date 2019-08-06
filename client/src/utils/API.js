@@ -27,5 +27,14 @@ export default {
         return fetch('/logout', {
             method: 'GET'
         })
+    },
+    saveInfo: function(info) {
+        return fetch('/save/info', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(info)
+        })
     }
 }
