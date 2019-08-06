@@ -11,6 +11,7 @@ var routes = require('./backend/routes/index')
 var users = require('./backend/routes/user')
 var mongodbUrl = require('./config/keys').mongoURL
 var app = express()
+const PORT = process.env.PORT || 3001
 
 // view engine setup
 app.use(logger('dev'))
@@ -31,6 +32,11 @@ passport.use(new LocalStrategy(Account.authenticate()))
 passport.serializeUser(Account.serializeUser())
 passport.deserializeUser(Account.deserializeUser())
 
+// catch 404 and forward to error handler
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+}
 // mongoose
 mongoose.Promise = require('bluebird')
 mongoose.Promise = global.Promise
@@ -39,11 +45,6 @@ mongoose.connect(process.env.mongoURL || 'mongodb://localhost/Roadkiller',
         console.log('mongose started')
     })
 
-// catch 404 and forward to error handler
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'))
-}
 
 // production error handler
 // no stacktraces leaked to user
@@ -57,6 +58,6 @@ app.use(function(req, res, next) {
     }
     next()
 })
-app.listen(3001, function() {
-    console.log('server listening')
+app.listen(PORT, function() {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
 })
