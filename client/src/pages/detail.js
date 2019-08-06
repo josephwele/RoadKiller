@@ -17,7 +17,9 @@ export class Detail extends Component {
     }
     handleSignout = () => {
         alert('signout')
-        this.props.handleRedirect()
+        API.logOut()
+            .then(res => { this.props.handleRedirect() })
+
     }
     handleOnChange = (event) => {
         this.setState({

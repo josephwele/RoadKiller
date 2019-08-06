@@ -42,7 +42,6 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
         if (err) {
             console.log(err)
         }
-
     })
     res.send('ok')
 })

@@ -34,7 +34,7 @@ passport.deserializeUser(Account.deserializeUser())
 // mongoose
 mongoose.Promise = require('bluebird')
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/Roadkiller',
+mongoose.connect(process.env.mongoURL || 'mongodb://localhost/Roadkiller',
     function() {
         console.log('mongose started')
     })
