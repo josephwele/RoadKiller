@@ -1,27 +1,38 @@
 .Navbar{
+    
     color: white;
     position: relative;
     text-align: center;
     overflow: auto;
     background: linear-gradient( #014C76, #C360D2);
+    margin-bottom: 1px;
     
 }
+
 
 .btnp{
     float: right;
     margin-bottom: 5px;
-    margin-right: 5px;
+    margin-right: 65px;
 }
     
 
 
 
-.bikes{
-    padding-left: 40px;
-    padding-top: 5px;
+
+
+.form-ri{
+    position: relative;
+    background-image: url(Back.png)
 }
 
-.container{
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient( #014C76, #C360D2);
+    color: white;
     
-}
+  }
 
