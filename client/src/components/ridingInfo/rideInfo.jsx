@@ -57,7 +57,7 @@ export class RideInfo extends Component {
                 </form>
         </div>
         <footer className='text-center'>
-  <h1>&copy;RKB</h1>
+  <h3>&copy;RKB</h3>
   
 </footer>
 

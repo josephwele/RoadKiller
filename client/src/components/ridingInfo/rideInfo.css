@@ -31,8 +31,9 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: linear-gradient( #014C76, #C360D2);
+    background: linear-gradient(purple, rgb(7, 14, 71));
     color: white;
+    height: 40px;
     
   }
 
