@@ -13,8 +13,6 @@ export default {
         })
     },
     signUp: function(info) {
-        alert('signup reached')
-        console.log(info)
         return fetch('/register', {
             method: 'POST',
             headers: {
@@ -29,12 +27,22 @@ export default {
         })
     },
     saveInfo: function(info) {
-        return fetch('/save/info', {
+        return fetch('/form/save', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(info)
         })
+    },
+    dataInfo: function(info) {
+        return fetch('/form', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(info)
+        })
     }
+
 }

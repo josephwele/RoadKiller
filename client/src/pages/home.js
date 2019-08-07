@@ -26,7 +26,6 @@ export class Home extends React.Component {
 
     handleSignIn = (event) => {
         //prevent submit
-        alert("signin clicked")
         API.signIN({
                 email: this.state.email,
                 pass: this.state.pass
@@ -37,7 +36,6 @@ export class Home extends React.Component {
     }
     handleSignUp = (event) => {
         event.preventDefault()
-        alert("clicked")
         API.signUp({
                 email: this.state.email,
                 pass: this.state.pass

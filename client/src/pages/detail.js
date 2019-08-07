@@ -15,7 +15,6 @@ export class Detail extends Component {
         }
     }
     handleSignout = () => {
-        alert('signout')
         API.logOut()
             .then(res => { this.props.handleRedirect() })
 
