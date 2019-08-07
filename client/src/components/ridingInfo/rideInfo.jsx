@@ -56,6 +56,10 @@ export class RideInfo extends Component {
           <button type='button' className='btn btn-primary' onClick={this.props.handleSubmit}>Submit</button>
                 </form>
         </div>
+        <footer className='text-center'>
+  <h1>&copy;RKB</h1>
+  
+</footer>
 
             </div>
     )
